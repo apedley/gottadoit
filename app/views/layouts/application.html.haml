@@ -1,0 +1,23 @@
+!!!Doctype
+%html
+  %head
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+  %body
+    .container
+      .row
+        .span12
+          %h1
+            Header
+      .row
+        .span3
+          %p
+            Sidebar
+        .span9
+          .flash
+            - if flash[:notice]
+              %p.notice=flash[:notice]
+            - if flash[:alert]
+              %p.alert=flash[:alert]
+            
+          = yield
