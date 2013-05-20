@@ -10,7 +10,10 @@
           %h1
             Tasks
       .row
-        .span12
+        .span3
+          - if user_signed_in?
+            = link_to 'Logout', destroy_user_session_path, :method => :delete
+        .span9
           .flash
             - if flash[:notice]
               %p.notice=flash[:notice]
