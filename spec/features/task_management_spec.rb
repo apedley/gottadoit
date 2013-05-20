@@ -25,6 +25,13 @@ feature "task management" do
     expect(page).to_not have_content(@completed_task.name)
   end
 
+  scenario "view completed tasks" do
+    visit root_path
+    click_link 'Completed Tasks'
+    expect(page).to have_content(@completed_task.name)
+    expect(page).to_not have_content(@task.name)
+  end
+
   scenario "create a new task" do
     visit new_task_path
     fill_in "Name", :with => "My sample task"

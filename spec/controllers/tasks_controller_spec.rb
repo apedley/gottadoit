@@ -23,6 +23,15 @@ describe TasksController do
     end
   end
 
+  describe "GET #complete" do
+    it "populates an array of completed tasks" do
+      task = create(:task)
+      completed_task = create(:completed_task)
+      get :complete
+      expect(assigns(:tasks)).to_not include(task)
+    end
+  end
+
   describe "GET #show" do
     it "assigns the requested task to @task" do
       task = create(:task)

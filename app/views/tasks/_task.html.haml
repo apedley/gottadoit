@@ -1,4 +1,9 @@
-%h3= link_to task.name, task
-%p= "Completed: #{task.completed}"
-%p= link_to 'Edit', edit_task_path(task)
-%p= link_to 'Delete', task, method: :delete
+%h3
+  = check_box_tag 'completed', 'completed', task.completed
+  = link_to task.name, task
+%p
+  
+%p
+  = link_to 'Edit', edit_task_path(task)
+  &nbsp;|&nbsp;
+  = link_to 'Delete', task, method: :delete

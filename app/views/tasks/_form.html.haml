@@ -1,8 +1,16 @@
-= form_for @task do |t|
-  =t.label :name
-  =t.text_field :name
-
-  =t.label :completed
-  =t.check_box :completed
-
-  =t.submit 'Save'
+= form_for @task, :html => {:class => 'form-horizontal'} do |t|
+  %fieldset
+    .legend
+      %legend
+        = form_title
+    .control-group
+      =t.label :name, :class => 'control-label'
+      .controls
+        =t.text_field :name, :class => 'input-xxlarge'
+    .control-group
+      .controls#task-form
+        =t.check_box :completed
+        =t.label :completed
+    .control-group
+      .controls
+        =t.submit 'Save', :class => 'btn'

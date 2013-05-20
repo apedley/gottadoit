@@ -5,6 +5,12 @@ class TasksController < ApplicationController
 
   def incomplete
     @tasks = Task.incomplete
+    render 'index'
+  end
+
+  def complete
+    @tasks = Task.complete
+    render 'index'
   end
 
   def show

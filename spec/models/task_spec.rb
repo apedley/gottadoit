@@ -12,4 +12,12 @@ describe Task do
     expect(incomplete_tasks.length).to eq(1)
   end
 
+  it "returns all complete tasks" do
+    task1 = create(:task)
+    task2 = create(:completed_task)
+
+    complete_tasks = Task.complete
+    expect(complete_tasks.length).to eq(1)
+  end
+
 end
