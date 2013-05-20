@@ -1,6 +1,10 @@
 Gottadoit::Application.routes.draw do
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      get 'incomplete', :as => 'incomplete'
+    end
+  end
 
 
   get "home/index"

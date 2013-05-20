@@ -3,6 +3,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def incomplete
+    @tasks = Task.incomplete
+  end
+
   def show
     @task = Task.find(params[:id])
   end
@@ -18,5 +22,24 @@ class TasksController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update_attributes(params[:task])
+      redirect_to @task, :flash => { :notice => "Task was saved." }
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path, :flash => { :notice => "Task was deleted." }
   end
 end

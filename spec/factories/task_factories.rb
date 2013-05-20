@@ -6,5 +6,9 @@ FactoryGirl.define do
     factory :completed_task do
       completed true
     end
+
+    factory :invalid_task do
+      completed nil
+    end
   end
 end
