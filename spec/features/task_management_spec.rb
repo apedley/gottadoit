@@ -3,6 +3,6 @@ feature "task management" do
     visit new_task_path
     fill_in "Name", :with => "My sample task"
     click_button "Create"
-    expect(page).to have_text("Task created")
+    expect(page).to have_text("Task was created")
   end
 end
