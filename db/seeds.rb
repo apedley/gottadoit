@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-task = Task.create([{ name: 'My first task', completed: false }])
-task = Task.create([{ name: 'My second task', completed: true }])
+user = User.create({ name: 'andrew', email: 'test@test.com', password: 'pass123', password_confirmation: 'pass123', confirmed_at: Time.now })
+task = Task.create({ name: 'My first task', completed: false, user: user })
+task = Task.create({ name: 'My second task', completed: true, user: user })

@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+
   attr_accessible :completed, :name
 
   def self.incomplete

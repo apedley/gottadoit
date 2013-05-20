@@ -11,8 +11,7 @@
             Tasks
       .row
         .span3
-          - if user_signed_in?
-            = link_to 'Logout', destroy_user_session_path, :method => :delete
+          %p= link_to 'Tasks', tasks_path
         .span9
           .flash
             - if flash[:notice]

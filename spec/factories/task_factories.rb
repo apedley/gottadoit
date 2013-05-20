@@ -3,7 +3,6 @@ FactoryGirl.define do
   factory :task do
     name
     completed false
-    
     factory :completed_task do
       completed true
     end
